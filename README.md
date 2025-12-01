@@ -26,4 +26,4 @@ The project is built using **HTML, CSS, and JavaScript** and focuses on the user
 
 ---
 ## 🌐 Live Demo
-[(https://hadeelabed.github.io/Orphan-Sponsorship-Platform/)]
+[Open Live Demo](https://hadeelabed.github.io/Orphan-Sponsorship-Platform/)
