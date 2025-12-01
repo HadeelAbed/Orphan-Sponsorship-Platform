@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>طلبات الكفالة - لوحة التحكم</title>
+
+    <!-- خط كايرو (نفس الموقع الأساسي) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- ملفات الستايل العامة -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- ستايل صفحة طلبات الكفالة -->
+    <link rel="stylesheet" href="css/admin-requests.css" />
+  </head>
+  <body>
+    <div class="page admin-layout">
+      <!-- الشريط الجانبي -->
+      <aside class="admin-sidebar">
+        <div class="admin-sidebar-top">
+          <div class="admin-logo">
+            <span class="material-icons-outlined admin-logo-icon">
+              volunteer_activism
+            </span>
+            <span class="admin-logo-text">لوحة الإدارة</span>
+          </div>
+
+          <nav class="admin-nav">
+            <a href="admin-dashboard.html" class="admin-nav-link">
+              <span class="material-icons-outlined">grid_view</span>
+              <span>لوحة التحكم</span>
+            </a>
+
+            <a href="admin-orphans.html" class="admin-nav-link">
+              <span class="material-icons-outlined">groups</span>
+              <span>إدارة الأيتام</span>
+            </a>
+
+            <a
+              href="admin-requests.html"
+              class="admin-nav-link admin-nav-link--active"
+            >
+              <span class="material-icons-outlined">request_page</span>
+              <span>طلبات الكفالة</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="admin-sidebar-bottom">
+          <p class="admin-user-label">حساب المدير</p>
+          <div class="admin-user-chip">
+            <div class="admin-user-avatar">أ</div>
+            <div class="admin-user-info">
+              <span class="admin-user-name">أدمن</span>
+              <span class="admin-user-role">مسؤول النظام</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- المحتوى الرئيسي -->
+      <main class="admin-main">
+        <header class="admin-main-header">
+          <div>
+            <h1 class="admin-page-title">طلبات الكفالة</h1>
+            <p class="admin-page-subtitle">
+              يمكنك هنا متابعة جميع طلبات الكفالة الواردة من الكفلاء.
+            </p>
+          </div>
+        </header>
+
+        <!-- كروت الإحصائيات -->
+        <section class="admin-card admin-stats">
+          <div class="admin-stats-grid">
+            <article class="admin-stat">
+              <div>
+                <p class="admin-stat-label">إجمالي الطلبات</p>
+                <p class="admin-stat-number">
+                  <span id="total-requests-count">6</span>
+                </p>
+              </div>
+              <span class="material-icons-outlined admin-stat-icon stat-icon--total">
+                inventory_2
+              </span>
+            </article>
+
+            <article class="admin-stat">
+              <div>
+                <p class="admin-stat-label">طلبات مرفوضة</p>
+                <p class="admin-stat-number">
+                  <span id="rejected-requests-count">1</span>
+                </p>
+              </div>
+              <span class="material-icons-outlined admin-stat-icon stat-icon--rejected">
+                highlight_off
+              </span>
+            </article>
+
+            <article class="admin-stat">
+              <div>
+                <p class="admin-stat-label">طلبات معلّقة</p>
+                <p class="admin-stat-number">
+                  <span id="pending-requests-count">3</span>
+                </p>
+              </div>
+              <span class="material-icons-outlined admin-stat-icon stat-icon--pending">
+                hourglass_empty
+              </span>
+            </article>
+
+            <article class="admin-stat">
+              <div>
+                <p class="admin-stat-label">طلبات موافَق عليها</p>
+                <p class="admin-stat-number">
+                  <span id="approved-requests-count">2</span>
+                </p>
+              </div>
+              <span class="material-icons-outlined admin-stat-icon stat-icon--approved">
+                check_circle_outline
+              </span>
+            </article>
+          </div>
+        </section>
+
+        <!-- صندوق جدول الطلبات -->
+        <section class="admin-card">
+          <div class="admin-requests-header">
+            <h2 class="admin-section-title">قائمة الطلبات</h2>
+            <div class="admin-requests-search">
+              <span class="material-icons-outlined admin-search-icon">
+                search
+              </span>
+              <input
+                type="text"
+                id="request-search"
+                class="admin-search-input"
+                placeholder="بحث عن الطلب (اسم الكفيل، الطفل، الحالة...)"
+              />
+            </div>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="requests-table">
+              <thead>
+                <tr>
+                  <th>اسم الكفيل</th>
+                  <th>اسم الطفل</th>
+                  <th>تاريخ التقديم</th>
+                  <th>طريقة التواصل</th>
+                  <th>الحالة</th>
+                  <th>الإجراءات</th>
+                </tr>
+              </thead>
+              <tbody id="requests-table-body">
+                <!-- 1: معلّق -->
+                <tr data-status="pending">
+                  <td>فاطمة الزهراء</td>
+                  <td>أحمد سعيد</td>
+                  <td>2024-03-10</td>
+                  <td>
+                    <div class="contact-method">
+                      <span class="contact-method-type">بريد إلكتروني</span>
+                      <span class="contact-method-detail">
+                        fatima.z@example.com
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge--pending">معلّق</span>
+                  </td>
+                  <td>
+                    <button class="table-link">عرض</button>
+                  </td>
+                </tr>
+
+                <!-- 2: موافَق عليه -->
+                <tr data-status="approved">
+                  <td>محمد العلي</td>
+                  <td>ليلى حسن</td>
+                  <td>2024-03-08</td>
+                  <td>
+                    <div class="contact-method">
+                      <span class="contact-method-type">هاتف</span>
+                      <span class="contact-method-detail">
+                        +966501234567
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge--approved">موافق عليه</span>
+                  </td>
+                  <td>
+                    <button class="table-link">عرض</button>
+                  </td>
+                </tr>
+
+                <!-- 3: مرفوض -->
+                <tr data-status="rejected">
+                  <td>عائشة محمود</td>
+                  <td>يوسف خالد</td>
+                  <td>2024-03-05</td>
+                  <td>
+                    <div class="contact-method">
+                      <span class="contact-method-type">بريد إلكتروني</span>
+                      <span class="contact-method-detail">
+                        aisha.m@example.com
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge--rejected">مرفوض</span>
+                  </td>
+                  <td>
+                    <button class="table-link">عرض</button>
+                  </td>
+                </tr>
+
+                <!-- 4: معلّق -->
+                <tr data-status="pending">
+                  <td>خالد بن الوليد</td>
+                  <td>نور علي</td>
+                  <td>2024-03-02</td>
+                  <td>
+                    <div class="contact-method">
+                      <span class="contact-method-type">هاتف</span>
+                      <span class="contact-method-detail">
+                        +966559876543
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge--pending">معلّق</span>
+                  </td>
+                  <td>
+                    <button class="table-link">عرض</button>
+                  </td>
+                </tr>
+
+                <!-- 5: موافَق عليه -->
+                <tr data-status="approved">
+                  <td>سارة عبد الله</td>
+                  <td>زينب فؤاد</td>
+                  <td>2024-02-28</td>
+                  <td>
+                    <div class="contact-method">
+                      <span class="contact-method-type">بريد إلكتروني</span>
+                      <span class="contact-method-detail">
+                        sara.a@example.com
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge--approved">موافق عليه</span>
+                  </td>
+                  <td>
+                    <button class="table-link">عرض</button>
+                  </td>
+                </tr>
+
+                <!-- 6: معلّق -->
+                <tr data-status="pending">
+                  <td>علياء الشمري</td>
+                  <td>عمران موسى</td>
+                  <td>2024-02-25</td>
+                  <td>
+                    <div class="contact-method">
+                      <span class="contact-method-type">هاتف</span>
+                      <span class="contact-method-detail">
+                        +966531122334
+                      </span>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge badge--pending">معلّق</span>
+                  </td>
+                  <td>
+                    <button class="table-link">عرض</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- سكربت الفلترة والإحصائيات -->
+    <script src="js/admin-requests.js"></script>
+  </body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>إدارة الأيتام - لوحة تحكم المشرف</title>
+
+    <!-- Font Awesome (لو حابة تستخدم أيقونات إضافية) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- خط كايرو (نفسه في باقي الموقع) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- الستايل العام + ستايل الأدمن -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+
+  <body>
+    <div class="admin-layout">
+      <!-- الشريط الجانبي -->
+      <aside class="admin-sidebar">
+        <div>
+          <div class="admin-sidebar-header">
+            <h1 class="admin-logo">المنصة</h1>
+            <div class="admin-user-circle">
+              <span class="material-symbols-outlined">person</span>
+            </div>
+          </div>
+
+          <nav class="admin-nav">
+            <a href="admin-dashboard.html" class="admin-nav-link">
+              <span class="material-symbols-outlined">grid_view</span>
+              <span>لوحة التحكم</span>
+            </a>
+
+            <a href="admin-orphans.html" class="admin-nav-link active">
+              <span class="material-symbols-outlined">groups</span>
+              <span>إدارة الأيتام</span>
+            </a>
+
+            <a href="admin-requests.html" class="admin-nav-link">
+              <span class="material-symbols-outlined">volunteer_activism</span>
+              <span>طلبات الكفالة</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="admin-sidebar-footer">
+          <p class="admin-footer-text">لوحة تحكم المشرف</p>
+        </div>
+      </aside>
++
+      <!-- المحتوى الرئيسي -->
+      <main class="admin-main">
+        <h2 class="admin-page-title">إدارة الأيتام</h2>
+
+        <!-- فورم إضافة يتيم جديد -->
+        <section class="admin-card">
+          <h3 class="admin-card-title">إضافة يتيم جديد</h3>
+          <form  id="orphan-form" id="orphan-form">
+            <div class="admin-form-grid">
+              <div class="form-field">
+                <label for="full_name">الاسم الكامل</label>
+                <input id="full_name" type="text" required />
+              </div>
+
+              <div class="form-field">
+                <label for="age">العمر</label>
+                <input id="age" type="number" min="0" value="0" required />
+              </div>
+
+              <div class="form-field">
+                <label for="city">المدينة</label>
+                <input
+                  id="city"
+                  type="text"
+                  placeholder="أدخل المدينة"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="education_status">الحالة التعليمية</label>
+                <select id="education_status" required>
+                  <option value="">اختر الحالة التعليمية</option>
+                  <option>روضة</option>
+                  <option>ابتدائي</option>
+                  <option>متوسط</option>
+                  <option>ثانوي</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="health_status">الحالة الصحية</label>
+                <select id="health_status" required>
+                  <option value="">اختر الحالة الصحية</option>
+                  <option>بصحة جيدة</option>
+                  <option>يحتاج رعاية خاصة</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="social_status">الحالة الاجتماعية</label>
+                <select id="social_status" required>
+                  <option value="">اختر الحالة الاجتماعية</option>
+                  <option>فقد الأبوين</option>
+                  <option>يتيم الأب</option>
+                  <option>يتيم الأم</option>
+                </select>
+              </div>
+
+              <!-- رفع صورة (حالياً شكلي فقط) -->
+              <div class="form-field form-field--wide">
+                <label>صورة اليتيم</label>
+                <div class="upload-area">
+                  <span class="material-symbols-outlined upload-icon">
+                    groups
+                  </span>
+                  <p class="upload-text">
+                    اسحب وأفلت الصورة هنا أو انقر للتحميل
+                  </p>
+                  <input
+                    id="file-upload"
+                    type="file"
+                    accept="image/*"
+                    class="upload-input"
+                  />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="sponsorship_status">حالة الكفالة</label>
+                <select id="sponsorship_status" required>
+                  <option>غير مكفول</option>
+                  <option>مكفول</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary admin-submit-btn">
+                إضافة يتيم
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- جدول الأيتام الحاليين -->
+        <section class="admin-card">
+                    <div id="admin-message" class="admin-message" aria-live="polite"></div>
+
+          <h3 class="admin-card-title">الأيتام الحاليون</h3>
+
+          <div class="admin-table-wrapper">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>الصورة</th>
+                  <th>الاسم الكامل</th>
+                  <th>العمر</th>
+                  <th>الحالة الاجتماعية</th>
+                  <th>الحالة الصحية</th>
+                  <th>الحالة التعليمية</th>
+                  <th>المدينة</th>
+                  <th>حالة الكفالة</th>
+                  <th>الإجراءات</th>
+                </tr>
+              </thead>
+              <tbody id="orphans-table-body">
+                <!-- بيانات أولية (ديمو) -->
+                <tr>
+                  <td>
+                    <img
+                      src="images/ch1.jpg"
+                      alt="فاطمة أحمد"
+                      class="admin-avatar"
+                    />
+                  </td>
+                  <td>فاطمة أحمد</td>
+                  <td>8</td>
+                  <td>فقدت الأبوين</td>
+                  <td>بصحة جيدة</td>
+                  <td>ابتدائي</td>
+                  <td>كرة</td>
+                  <td>
+                    <span class="badge badge--yes">مكفول</span>
+                  </td>
+                  <td>
+                    <div class="table-actions">
+                      <button
+                        type="button"
+                        class="table-btn table-btn--edit"
+                        data-action="edit"
+                      >
+                        <span class="material-symbols-outlined">edit</span>
+                        تعديل
+                      </button>
+                      <button
+                        type="button"
+                        class="table-btn table-btn--delete"
+                        data-action="delete"
+                      >
+                        <span class="material-symbols-outlined">delete</span>
+                        حذف
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- سكربت الأدمن -->
+    <script src="js/admin.js"></script>
+  </body>
+</html>

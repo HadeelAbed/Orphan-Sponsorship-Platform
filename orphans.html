@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>قائمة الأيتام</title>
+
+    <!-- خط كايرو (نفسه تبع الموقع) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Symbols للأيقونات (cake / person / health...) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- ملف الستايل العام -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/orphans.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- هيدر بسيط مع روابط + بحث -->
+      <header class="orphans-header container">
+        <nav class="orphans-nav">
+          <a href="index.html" class="orphans-nav-link">الرئيسية</a>
+          <a href="orphans.html" class="orphans-nav-link active"
+            >قائمة الأيتام</a
+          >
+          <a href="sponsor-dashboard.html" class="orphans-nav-link">لوحة تحكم الكافل</a>
+        </nav>
+
+        <div class="orphans-search">
+          <span class="material-symbols-outlined orphans-search-icon"
+            >search</span
+          >
+          <input id="orphan-search" type="text" placeholder="ابحث هنا..." />
+        </div>
+      </header>
+
+      <main class="container">
+        <h1 class="section-title orphans-title">قائمة الأيتام</h1>
+
+        <section class="orphans-grid">
+          <!-- كرت 1 -->
+          <article class="orphan-card">
+            <img
+              src="images/ch1.jpg"
+              alt="صورة الطفلة مريم صالح"
+              class="orphan-image"
+            />
+            <div class="orphan-body">
+              <div class="orphan-header-line">
+                <h2 class="orphan-name">مريم صالح</h2>
+                <span class="orphan-badge orphan-badge--not">غير مكفول</span>
+              </div>
+              <ul class="orphan-info">
+                <li>
+                  <span class="material-symbols-outlined orphan-icon"
+                    >cake</span
+                  >
+                  <span class="info-label">العمر:</span>
+                  <span>٨ أعوام</span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined orphan-icon"
+                    >person</span
+                  >
+                  <span class="info-label">الجنسية:</span>
+                  <span>فلسطين</span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined orphan-icon">
+                    health_and_safety
+                  </span>
+                  <span class="info-label">الحالة الطبية:</span>
+                  <span>سليمة</span>
+                </li>
+              </ul>
+              <a
+                href="orphan-details.html?id=maryam"
+                class="btn btn-primary orphan-btn"
+              >
+                عرض التفاصيل
+              </a>
+            </div>
+          </article>
+
+          <!-- كرت 2 -->
+          <article class="orphan-card">
+            <img
+              src="images/ch5.jpg"
+              alt="صورة الطفل يوسف فهد"
+              class="orphan-image"
+            />
+            <div class="orphan-body">
+              <div class="orphan-header-line">
+                <h2 class="orphan-name">يوسف فهد</h2>
+                <span class="orphan-badge orphan-badge--not">غير مكفول</span>
+              </div>
+              <ul class="orphan-info">
+                <li>
+                  <span class="material-symbols-outlined orphan-icon"
+                    >cake</span
+                  >
+                  <span class="info-label">العمر:</span>
+                  <span>٦ أعوام</span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined orphan-icon"
+                    >person</span
+                  >
+                  <span class="info-label">الجنسية:</span>
+                  <span>فلسطين</span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined orphan-icon">
+                    health_and_safety
+                  </span>
+                  <span class="info-label">الحالة الطبية:</span>
+                  <span>سليمة</span>
+                </li>
+              </ul>
+              <a
+                href="orphan-details.html?id=yousef"
+                class="btn btn-primary orphan-btn"
+              >
+                عرض التفاصيل
+              </a>
+            </div>
+          </article>
+
+          <!-- كرت 3 -->
+          <article class="orphan-card">
+            <img
+              src="images/ch2.png"
+              alt="صورة الطفلة علياء محمود"
+              class="orphan-image"
+            />
+            <div class="orphan-body">
+              <div class="orphan-header-line">
+                <h2 class="orphan-name">علياء محمود</h2>
+                <span class="orphan-badge orphan-badge--yes">مكفول</span>
+              </div>
+              <ul class="orphan-info">
+                <li>
+                  <span class="material-symbols-outlined orphan-icon"
+                    >cake</span
+                  >
+                  <span class="info-label">العمر:</span>
+                  <span>١٢ عامًا</span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined orphan-icon"
+                    >person</span
+                  >
+                  <span class="info-label">الجنسية:</span>
+                  <span>فلسطين</span>
+                </li>
+                <li>
+                  <span class="material-symbols-outlined orphan-icon">
+                    health_and_safety
+                  </span>
+                  <span class="info-label">الحالة الطبية:</span>
+                  <span>سليمة</span>
+                </li>
+              </ul>
+              <a
+                href="orphan-details.html?id=alya"
+                class="btn btn-primary orphan-btn"
+              >
+                عرض التفاصيل
+              </a>
+            </div>
+          </article>
+
+          <!-- ... كمّلي باقي الكروت بنفس النمط مع البيانات اللي عندك ... -->
+        </section>
+      </main>
+    </div>
+
+    <script src="js/orphans.js"></script>
+  </body>
+</html>

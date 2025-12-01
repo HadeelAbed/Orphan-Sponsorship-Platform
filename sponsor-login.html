@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تسجيل الدخول - الكفيل</title>
+
+    <!-- خط كايرو + الأساسيات العامة -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ستايل العام للموقع -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- ستايل صفحات الدخول/التسجيل -->
+    <link rel="stylesheet" href="css/auth.css" />
+  </head>
+  <body>
+    <div class="page auth-page">
+      <div class="auth-container">
+        <div class="auth-card">
+          <h1 class="auth-title">تسجيل الدخول</h1>
+          <p class="auth-subtitle">
+            الرجاء إدخال بيانات الاعتماد الخاصة بك للوصول إلى حساب الكفيل
+          </p>
+
+          <form class="auth-form" action="#" method="post">
+            <!-- البريد الإلكتروني -->
+            <div class="auth-field">
+              <label class="auth-label" for="sponsor-email">
+                البريد الإلكتروني
+              </label>
+              <input
+                class="auth-input"
+                type="email"
+                id="sponsor-email"
+                name="email"
+                placeholder="ادخل بريدك الإلكتروني"
+                required
+              />
+            </div>
+
+            <!-- كلمة المرور -->
+            <div class="auth-field">
+              <label class="auth-label" for="sponsor-password">
+                كلمة المرور
+              </label>
+              <input
+                class="auth-input"
+                type="password"
+                id="sponsor-password"
+                name="password"
+                placeholder="ادخل كلمة المرور"
+                required
+              />
+            </div>
+
+            <!-- نسيت كلمة المرور -->
+            <div class="auth-helper-text" style="margin-top: 0">
+              <a href="#">نسيت كلمة المرور؟</a>
+            </div>
+
+            <!-- زر تسجيل الدخول -->
+            <button class="btn btn-primary auth-btn" type="submit">
+              تسجيل الدخول
+            </button>
+            <p class="auth-helper-text">
+              لا تملك حساباً ككفيل؟
+              <a href="register-sponsor.html">إنشاء حساب جديد</a>
+            </p>
+            <!-- رجوع -->
+            <p class="auth-helper-text">
+              العودة إلى
+              <a href="login.html">صفحة اختيار نوع الحساب</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .querySelector(".auth-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          // بعد التحقق من البيانات
+          window.location.href = "sponsor-dashboard.html";
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة التحكم</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/dash-admain.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <nav>
+          <a href="admin-dashboard.html" class="active">
+            <span class="material-icons-outlined">home</span>
+            <span>لوحة التحكم</span>
+          </a>
+          <a href="admin-orphans.html">
+            <span class="material-icons-outlined">groups</span>
+            <span>إدارة الأيتام</span>
+          </a>
+          <a href="admin-requests.html">
+            <span class="material-icons-outlined">hourglass_empty</span>
+            <span>مراجعة الطلبات</span>
+          </a>
+          <a href="#">
+            <span class="material-icons-outlined">notifications</span>
+            <span>الإشعارات</span>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header>
+          <h1>لوحة التحكم</h1>
+          <button class="img-home">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzoLzOR0YFQhjp6FMzVsUe35CR3JdwdKXg32_wrThHX72ooMJy0-yyooMRCqMz08v3pOBO0bnnUAxQXvB2yygUe3L8yYzFuRskqfatEwtXlBpnQtTqMe-Y8CReX4YbthDDptYKV-jtWq6Sm7A-btvLGBdq1rq1eCtTuV_a_gULzn5ZoiB_y_mRv13nQ40zw1QPZvZXDt8NYGZLNzWsBVPTO32vMTCBFE6woLDfjx8hit_BVF7QWuDb0h_ackiJORJ84vIwaFU6Tn0"
+              alt="صورة المستخدم"
+            />
+          </button>
+        </header>
+
+        <section class="statistics">
+          <h2>نظرة عامة على الإحصائيات</h2>
+          <div class="stat-cards">
+            <div class="stat-card">
+              <div>
+                <p>إجمالي عدد الأيتام</p>
+                <p class="num" >1,023</p>
+              </div>
+              <span class="material-icons-outlined icon-green">groups</span>
+            </div>
+            <div class="stat-card">
+              <div>
+                <p>طلبات الكفالة المعلقة</p>
+                <p class="num">15</p>
+              </div>
+              <span class="material-icons-outlined  icon-orange">hourglass_empty</span>
+            </div>
+            <div class="stat-card">
+              <div>
+                <p>الكفالات النشطة</p>
+                <p class="num">258</p>
+              </div>
+              <span class="material-icons-outlined icon-blue">verified_user</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="actions">
+          <h2>إجراءات سريعة</h2>
+          <div class="action-buttons">
+            <button class="action-btn">إضافة يتيم جديد</button>
+            <button class="action-btn">مراجعة طلبات الكفالة</button>
+            <button class="action-btn">إرسال إشعارات للرعاة</button>
+          </div>
+        </section>
+
+        <section class="activities">
+          <h2>الأنشطة الأخيرة</h2>
+          <div class="activity-list">
+            <div class="activity-item">
+              <span class="material-icons-outlined icon-orange">person_add</span>
+              <div>
+                <p>تمت إضافة يتيم جديد: أحمد خالد</p>
+                <p class="time">منذ 5 دقائق</p>
+              </div>
+            </div>
+            <div class="activity-item">
+              <span class="material-icons-outlined icon-blue">check_circle_outline</span>
+              <div>
+                <p>تمت مراجعة طلب كفالة جديد</p>
+                <p class="time">قبل ساعة</p>
+              </div>
+            </div>
+            <div class="activity-item">
+              <span class="material-icons-outlined icon-green ">email</span>
+              <div>
+                <p>إشعار جماعي أرسل إلى الرعاة</p>
+                <p class="time">أمس الساعة 10:00 صباحًا</p>
+              </div>
+            </div>
+            <div class="activity-item">
+              <span class="material-icons-outlined icon-blue">thumb_up_alt</span>
+              <div>
+                <p>تمت الموافقة على كفالة جديدة: فاطمة علي</p>
+                <p class="time">أمس الساعة 3:30 مساءً</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer>
+          <p>جميع الحقوق محفوظة لنظام رعاية الأيتام 2025 ©</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

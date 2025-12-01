@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نموذج طلب الكفالة</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- خط كايرو -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Symbols (للأيقونة في الهيدر لو احتجنا) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- الستايل العام + ستايل النموذج -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/sponsorship-form.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- نفس هيدر الموقع -->
+      <header class="header container">
+        <div class="logo">
+          <span class="material-symbols-outlined logo-icon">
+            volunteer_activism
+          </span>
+          <span class="logo-text">كافل</span>
+        </div>
+
+        <nav class="nav" id="nav-links">
+          <a href="index.html" class="nav-link">الرئيسية</a>
+          <a href="orphans.html" class="nav-link">قائمة الأيتام</a>
+          <a href="#" class="nav-link">لوحة تحكم الكافل</a>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#" class="header-link">تسجيل الدخول</a>
+          <a href="#" class="btn btn-primary">سجل الآن</a>
+        </div>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="القائمة">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </header>
+
+      <main class="container">
+        <section class="form-wrapper">
+          <div class="form-intro">
+            <h1 class="section-title">نموذج طلب الكفالة</h1>
+            <p class="form-lead">
+              يرجى ملء النموذج أدناه لتقديم طلب الكفالة الخاص بكم. سيتم مراجعة
+              طلبك من قبل إدارتنا.
+            </p>
+
+            <!-- ملخص اسم اليتيم -->
+            <p id="orphan-summary" class="form-orphan-summary">
+              طلب كفالة اليتيم:
+              <span id="orphan-name-display"></span>
+            </p>
+          </div>
+
+          <div class="form-card">
+            <form action="#" method="POST" class="form-layout">
+              <!-- نخزن الـ id في حقل مخفي لو حابين نرسله للسيرفر -->
+              <input
+                type="hidden"
+                id="orphan-hidden-id"
+                name="orphanId"
+                value=""
+              />
+
+              <!-- قسم معلومات الراعي -->
+              <div class="form-section">
+                <h2 class="form-section-title">معلومات الاتصال بالراعي</h2>
+
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="full-name" class="form-label">الاسم الكامل</label>
+                    <input
+                      id="full-name"
+                      name="full-name"
+                      type="text"
+                      placeholder="أدخل اسمك الكامل"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email" class="form-label">
+                      عنوان البريد الإلكتروني
+                    </label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="أدخل بريدك الإلكتروني"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="phone" class="form-label">رقم الهاتف</label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="أدخل رقم هاتفك"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- قسم معلومات إضافية -->
+              <div class="form-section">
+                <h2 class="form-section-title">معلومات إضافية (اختياري)</h2>
+
+                <div class="form-group">
+                  <label for="additional-info" class="form-label">
+                    تعليقات أو تفاصيل إضافية
+                  </label>
+                  <textarea
+                    id="additional-info"
+                    name="additional-info"
+                    rows="4"
+                    placeholder="يمكنك إضافة أي معلومات إضافية هنا"
+                    class="form-control form-textarea"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary form-submit">
+                  إرسال الطلب
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <!-- نفس الفوتر -->
+      <footer class="footer container">
+        <p class="footer-copy">© 2024 كافل. جميع الحقوق محفوظة.</p>
+
+        <div class="footer-links">
+          <a href="#" class="footer-link">موارد</a>
+          <a href="#" class="footer-link">قانوني</a>
+          <a href="#" class="footer-link">تواصل معنا</a>
+        </div>
+
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Twitter">
+            <i class="fa-brands fa-twitter social-icon"></i>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in social-icon"></i>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f social-icon"></i>
+          </a>
+        </div>
+      </footer>
+    </div>
+
+    <!-- نفس سكربت القائمة -->
+    <script src="js/main.js"></script>
+    <!-- بيانات الأيتام اللي عملناها قبل -->
+    <script src="js/orphans-data.js"></script>
+    <!-- منطق صفحة النموذج -->
+    <script src="js/sponsor.js"></script>
+  </body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة تحكم الكافل</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- خط كايرو مثل باقي الموقع -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="js/auth.js"></script>
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    requireRole("sponsor");
+  });
+</script> -->
+
+
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <!-- ستايل عام + ستايل لوحة التحكم -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- نفس الهيدر الأساسي للموقع -->
+      <header class="header container">
+        <div class="logo">
+          <span class="material-symbols-outlined logo-icon">
+            volunteer_activism
+          </span>
+          <span class="logo-text">كافل</span>
+        </div>
+
+        <nav class="nav" id="nav-links">
+          <a href="index.html" class="nav-link">الرئيسية</a>
+          <a href="orphans.html" class="nav-link">قائمة الأيتام</a>
+          <a href="sponsor-dashboard.html" class="nav-link active">
+            لوحة تحكم الكافل
+          </a>
+        </nav>
+
+        <div class="header-actions">
+          <a href="login.html" class="header-link">تسجيل الدخول</a>
+          <a href="sponsor-login.html" class="btn btn-primary">سجل الآن</a>
+        </div>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="القائمة">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </header>
+
+      <main class="container dashboard">
+        <!-- شريط علوي بسيط -->
+        <section class="dashboard-top">
+          <div>
+            <h1 class="dashboard-title">مرحباً بك، أيها الكفيل</h1>
+            <p class="dashboard-subtitle">
+              هنا يمكنك متابعة وإدارة طلبات الكفالة للأيتام.
+            </p>
+          </div>
+
+          <div class="dashboard-top-actions">
+            <button class="icon-button" aria-label="الإشعارات">
+              <span class="material-symbols-outlined">notifications</span>
+            </button>
+
+            <div class="profile">
+              <div class="profile-avatar">
+                <!-- صورة افتراضية، ممكن تغيّريها -->
+                <span>ع</span>
+              </div>
+              <div class="profile-info">
+                <p class="profile-name">عائشة محمد</p>
+                <p class="profile-role">كافل</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ملخص الطلبات -->
+        <section class="dashboard-section">
+          <h2 class="section-title">ملخص الطلبات</h2>
+
+          <div class="summary-grid">
+            <article class="summary-card">
+              <span class="material-symbols-outlined summary-icon">
+                list_alt
+              </span>
+              <p class="summary-number" id="summary-total">0</p>
+              <p class="summary-label">إجمالي الطلبات</p>
+            </article>
+
+            <article class="summary-card">
+              <span class="material-symbols-outlined summary-icon">
+                hourglass_top
+              </span>
+              <p class="summary-number" id="summary-pending">0</p>
+              <p class="summary-label">قيد المراجعة</p>
+            </article>
+
+            <article class="summary-card">
+              <span class="material-symbols-outlined summary-icon">
+                check_circle
+              </span>
+              <p class="summary-number" id="summary-approved">0</p>
+              <p class="summary-label">موافق عليه</p>
+            </article>
+
+            <article class="summary-card">
+              <span class="material-symbols-outlined summary-icon">
+                cancel
+              </span>
+              <p class="summary-number" id="summary-cancelled">0</p>
+              <p class="summary-label">ملغية</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- طلبات الكفالة -->
+        <section class="dashboard-section">
+          <div class="requests-header">
+            <h2 class="section-title">طلبات الكفالة الخاصة بك</h2>
+
+            <div class="requests-filters">
+              <div class="search-wrapper">
+                <span
+                  class="material-symbols-outlined search-icon"
+                  aria-hidden="true"
+                  >search</span
+                >
+                <input
+                  id="requests-search"
+                  type="text"
+                  placeholder="ابحث عن طريق اسم اليتيم..."
+                />
+              </div>
+
+              <div class="select-wrapper">
+                <select id="status-filter">
+                  <option value="all">كل الحالات</option>
+                  <option value="pending">قيد المراجعة</option>
+                  <option value="approved">موافق عليه</option>
+                  <option value="cancelled">ملغية</option>
+                </select>
+                <span
+                  class="material-symbols-outlined select-icon"
+                  aria-hidden="true"
+                  >expand_more</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="requests-grid" id="requests-grid">
+            <!-- الكروت رح تتولد من الجافاسكربت -->
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer container">
+        <p class="footer-copy">© 2024 كافل. جميع الحقوق محفوظة.</p>
+
+        <div class="footer-links">
+          <a href="#" class="footer-link">سياسة الخصوصية</a>
+          <a href="#" class="footer-link">شروط الاستخدام</a>
+          <a href="#" class="footer-link">تواصل معنا</a>
+        </div>
+
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Twitter">
+            <i class="fa-brands fa-twitter social-icon"></i>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in social-icon"></i>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f social-icon"></i>
+          </a>
+        </div>
+      </footer>
+    </div>
+
+    <!-- سكربت القائمة للموبايل -->
+    <script src="js/main.js"></script>
+    <script src="js/orphans-data.js"></script>
+
+    <!-- سكربت لوحة التحكم -->
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>
