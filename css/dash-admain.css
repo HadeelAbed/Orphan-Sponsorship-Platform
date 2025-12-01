@@ -1,0 +1,237 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: #f8fafc;
+  color: #2d3748;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+.img-home{
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 5px 0;
+  border-radius: 8px;
+  color: #4a5568;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar nav a:hover {
+  background-color: #e2e8f0;
+}
+
+.sidebar nav a.active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.sidebar .material-icons-outlined {
+  margin-left: 10px;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #2d3748;
+}
+
+header button img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.statistics {
+  margin-bottom: 30px;
+}
+
+.statistics h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat-card p {
+  margin: 5px 0;
+}
+/* General Icon Styles */
+.material-icons-outlined {
+  cursor: pointer;
+  font-size: 24px; /* Set the size of the icon */
+  display: inline-block;
+  text-align: center;
+  padding: 1rem; /* Padding around the icon */
+  border-radius: 50%; /* Circular background */
+  width: 50px;  /* Adjust size */
+  height: 50px; /* Adjust size */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Individual Icon Backgrounds and Colors */
+.icon-blue {
+  background-color: #e3f2fd; /* Light blue background */
+  color: #2196f3;  /* Blue color for the icon */
+}
+
+.icon-orange {
+  background-color: #ffe4b5; /* Light orange background */
+  color: #fb923c;  /* Orange color for the icon */
+}
+
+.icon-green {
+  background-color: #d4f8d4; /* Light green background */
+  color: #34d399;  /* Green color for the icon */
+}
+
+.icon-yellow {
+  background-color: #fff9c4; /* Light yellow background */
+  color: #fbc02d;  /* Yellow color for the icon */
+}
+
+.icon-indigo {
+  background-color: #e8eaf6; /* Light indigo background */
+  color: #3f51b5;  /* Indigo color for the icon */
+}
+
+/* Hover Effects for Icons */
+.material-icons-outlined:hover {
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+  background-color: rgba(0, 0, 0, 0.1); /* Darken background slightly */
+}
+
+
+/* Cards styles */
+.stat-card {
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-card p {
+  margin: 0;
+  color: #7f7e7e;
+  font-size: 1.1rem;
+}
+.stat-card .num {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000;
+}
+.stat-card .material-icons-outlined {
+  margin-left: 1rem; /* Space between text and icon */
+}
+.actions h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.action-btn {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  border: none;
+}
+
+.action-btn:hover {
+  background-color: #2563eb;
+}
+
+.activities h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.activity-list {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.activity-item span {
+  display: block;
+  font-size: 30px;
+  margin-left: 10px;
+}
+.activity-item div .time {
+  font-size: 13px;
+  color: #7f7e7e;
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #4a5568;
+  margin-top: 40px;
+}

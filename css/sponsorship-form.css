@@ -1,0 +1,106 @@
+.form-wrapper {
+  max-width: 720px;
+  margin: 1rem auto 3rem;
+}
+
+.form-intro {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.form-lead {
+  color: var(--text-secondary);
+  max-width: 620px;
+  margin: 0.5rem auto 1.2rem;
+  font-size: 0.98rem;
+}
+
+.form-orphan-summary {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background-color: #eef2ff;
+  color: #3730a3;
+  font-size: 0.9rem;
+}
+
+.form-card {
+  background-color: var(--card);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-soft);
+  padding: 1.8rem 1.5rem;
+}
+
+.form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.form-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--primary);
+  display: inline-block;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form-grid .form-group:last-child {
+    grid-column: 1 / -1; /* خلي رقم الهاتف ياخد صف كامل */
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.3rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-actions {
+  margin-top: 0.5rem;
+}
+
+.form-submit {
+  width: 100%;
+  font-size: 0.98rem;
+}

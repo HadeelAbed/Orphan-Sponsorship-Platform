@@ -1,0 +1,121 @@
+/* عنوان الصفحة */
+.details-title {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* الجزء العلوي: صورة + معلومات أساسية */
+.details-main {
+  display: grid;
+  gap: 1.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.details-image-wrapper {
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  background-color: #000;
+}
+
+.details-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.details-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+
+.details-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.details-basic p {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.details-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-left: 0.3rem;
+}
+
+.details-value {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* الأقسام الثلاثة */
+.details-sections {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.details-section {
+  background-color: var(--card);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-soft);
+  padding: 1.5rem 1.3rem;
+}
+
+.details-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--primary);
+  display: inline-block;
+}
+
+.details-section-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.75rem;
+  row-gap: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.details-item-label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.details-item-value {
+  color: var(--text-secondary);
+}
+
+/* زر طلب الكفالة */
+.details-actions {
+  margin-top: 1.5rem;
+}
+
+.details-btn {
+  width: 100%;
+  font-size: 1rem;
+}
+
+/* ريسبونسيف */
+@media (min-width: 768px) {
+  .details-main {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
+    align-items: center;
+  }
+
+  .details-image {
+    height: 320px;
+  }
+
+  .details-sections {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

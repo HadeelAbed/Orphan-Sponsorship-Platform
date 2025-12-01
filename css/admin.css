@@ -1,0 +1,422 @@
+/* ===== لوحة تحكم الأدمن - إدارة الأيتام ===== */
+
+.admin-layout {
+  min-height: 100vh;
+  display: flex;
+  background-color: var(--bg);
+  color: var(--text-primary);
+}
+
+/* الشريط الجانبي */
+
+.admin-sidebar {
+  width: 260px;
+  background-color: #ffffff;
+  color: var(--text-primary);
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.16);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.admin-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.admin-logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.admin-user-circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ec4899, #f97316);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.admin-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: #6b7280;
+  font-size: 0.92rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.admin-nav-link .material-symbols-outlined {
+  font-size: 1.2rem;
+}
+
+.admin-nav-link:hover {
+  background-color: #f3f4f6;
+  color: var(--primary);
+}
+
+.admin-nav-link.active {
+  background-color: #eff6ff;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.admin-sidebar-footer {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.admin-footer-text {
+  margin: 0;
+}
+
+/* المحتوى الرئيسي */
+
+.admin-main {
+  flex: 1;
+  padding: 2rem 2rem 2.5rem;
+}
+
+.admin-page-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 1.4rem;
+}
+
+/* كارد عام */
+
+.admin-card {
+  background-color: var(--card);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border);
+  padding: 1.5rem 1.4rem 1.8rem;
+  margin-bottom: 1.4rem;
+}
+
+.admin-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+/* فورم إضافة يتيم */
+
+.admin-form-grid {
+  display: grid;
+  gap: 1rem 1.2rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.form-field input,
+.form-field select {
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.8rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  background-color: #f9fafb;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+  background-color: #ffffff;
+}
+
+.form-field--wide {
+  grid-column: 1 / -1;
+}
+
+/* منطقة رفع الصورة */
+
+.upload-area {
+  border-radius: 0.9rem;
+  border: 2px dashed var(--border);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  background-color: #f9fafb;
+  position: relative;
+}
+
+.upload-icon {
+  font-size: 2.5rem;
+  color: #9ca3af;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.upload-text {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.upload-input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* زر الإرسال */
+
+.form-actions {
+  margin-top: 1.3rem;
+}
+
+.admin-submit-btn {
+  width: 100%;
+}
+
+/* جدول الأيتام */
+
+.admin-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+
+.admin-table thead {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 0.75rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.admin-table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.admin-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+/* البادجات */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge--yes {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.badge--no {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+/* أزرار الجدول */
+
+.table-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.table-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.table-btn .material-symbols-outlined {
+  font-size: 1rem;
+}
+
+.table-btn--edit {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.table-btn--edit:hover {
+  background-color: #bfdbfe;
+}
+
+.table-btn--delete {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.table-btn--delete:hover {
+  background-color: #fecaca;
+}
+
+/* ريسبونسيف */
+
+@media (min-width: 768px) {
+  .admin-form-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .admin-nav {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .admin-main {
+    padding-inline: 1rem;
+  }
+}
+/* صندوق الرسائل في صفحة الأدمن */
+.admin-message {
+  display: none;
+  margin-bottom: 0.9rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 0.75rem;
+  font-size: 0.85rem;
+}
+
+/* أنواع الرسائل */
+/* صندوق الرسائل فوق جدول الأيتام */
+.admin-message {
+  display: none;
+  margin-bottom: 0.9rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 0.75rem;
+  font-size: 0.85rem;
+}
+
+/* رسائل عادية (نجاح / خطأ / معلومات) */
+.admin-message--error {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.admin-message--success {
+  background-color: #dcfce7;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.admin-message--info {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+/* حالة التأكيد */
+.admin-message--confirm {
+  background-color: #fefce8;
+  color: #854d0e;
+  border: 1px solid #facc15;
+}
+
+/* محتوى الرسالة (flex) */
+.admin-message__content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.admin-message__text {
+  flex: 1 1 auto;
+}
+
+/* أزرار داخل الرسالة */
+.admin-message__actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.admin-message__btn {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.admin-message__btn--danger {
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+.admin-message__btn--ghost {
+  background-color: transparent;
+  color: inherit;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* زر الإغلاق (X) */
+.admin-message__close {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0 0.25rem;
+}

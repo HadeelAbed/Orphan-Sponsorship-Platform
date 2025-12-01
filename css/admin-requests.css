@@ -1,0 +1,356 @@
+/* تخطيط عام للوحة الإدارة */
+.admin-layout {
+  min-height: 100vh;
+  display: flex;
+  background-color: var(--bg);
+}
+
+/* الشريط الجانبي */
+.admin-sidebar {
+  width: 240px;
+  background-color: #0f172a;
+  color: #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 1.25rem;
+}
+
+.admin-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.admin-logo-icon {
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+.admin-logo-text {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.admin-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.admin-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.6rem;
+  color: #cbd5f5;
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.admin-nav-link span.material-icons-outlined {
+  font-size: 1.25rem;
+}
+
+.admin-nav-link:hover {
+  background-color: rgba(148, 163, 184, 0.25);
+}
+
+.admin-nav-link--active {
+  background-color: rgba(59, 130, 246, 0.18);
+  color: #eff6ff;
+}
+
+/* معلومات المستخدم في الأسفل */
+.admin-sidebar-bottom {
+  border-top: 1px solid rgba(148, 163, 184, 0.35);
+  padding-top: 1rem;
+  margin-top: 1.5rem;
+}
+
+.admin-user-label {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+.admin-user-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.admin-user-avatar {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 999px;
+  background-color: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.admin-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-user-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.admin-user-role {
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+/* المحتوى الرئيسي */
+.admin-main {
+  flex: 1;
+  padding: 2rem;
+  background-color: var(--bg);
+}
+
+.admin-main-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.admin-page-title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.admin-page-subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* الكارد العام */
+.admin-card {
+  background-color: var(--card);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-soft);
+  padding: 1.5rem 1.4rem;
+  margin-bottom: 1.8rem;
+}
+
+/* كروت الإحصائيات */
+.admin-stats {
+  margin-bottom: 1.8rem;
+}
+
+.admin-stats-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.admin-stat {
+  border-radius: 0.9rem;
+  padding: 1.1rem 1rem;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-stat-label {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.3rem;
+}
+
+.admin-stat-number {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.admin-stat-icon {
+  font-size: 2rem;
+  opacity: 0.6;
+}
+
+.stat-icon--total {
+  color: #3b82f6;
+}
+
+.stat-icon--rejected {
+  color: #ef4444;
+}
+
+.stat-icon--pending {
+  color: #f59e0b;
+}
+
+.stat-icon--approved {
+  color: #22c55e;
+}
+
+/* رأس صندوق الطلبات */
+.admin-requests-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.admin-requests-search {
+  position: relative;
+  width: min(260px, 100%);
+}
+
+.admin-search-input {
+  width: 100%;
+  padding: 0.5rem 0.9rem 0.5rem 2.2rem;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.admin-search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.18);
+  background-color: #fff;
+}
+
+.admin-search-icon {
+  position: absolute;
+  left: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #9ca3af;
+}
+
+/* الجدول */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.requests-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.requests-table th,
+.requests-table td {
+  padding: 0.75rem 0.7rem;
+  text-align: right;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.requests-table thead th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.requests-table tbody tr:hover {
+  background-color: #f3f4ff;
+}
+
+/* طريقة التواصل */
+.contact-method-type {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+.contact-method-detail {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* البادج */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge--pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.badge--approved {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.badge--rejected {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+/* زر "عرض" */
+.table-link {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+/* ريسبونسيف */
+@media (max-width: 900px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .admin-sidebar-bottom {
+    display: none;
+  }
+
+  .admin-main {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .admin-requests-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-requests-search {
+    width: 100%;
+  }
+}
